@@ -1,0 +1,47 @@
+import java.io.*;
+class test  
+{
+    public static void fastSort(int[] a,int n){
+        if (n<=1) return;
+        fast(a,0,n-1);
+        return;
+    }
+
+    public static void fast(int[] a,int start,int end){
+        if(start>=end) return;
+        int small = start;
+        int large = end;
+        int first = a[start];
+        while(small<large){
+            while(small<large && a[large]>first){
+                large--;
+            }
+            if(small<large){
+               a[small] = a[large]; 
+               small++;
+            }
+            
+            
+            while(small<large && a[small]<first){
+                small++;
+            }
+            if(small<large){
+               a[large] = a[small];
+               large--; 
+            }
+            
+        }
+        a[small] = first;
+        fast(a,start,small-1);
+        fast(a,small+1,end);
+        return ;
+    }    
+   public static void main (String[] args) throws java.lang.Exception
+   {
+	int[] a = {1,2,3,7,3,3,8};//{6,5,4,1,2,3};
+	fastSort(a,a.length);
+	for(int i=0;i<a.length;i++){
+	    System.out.println(a[i]);
+        }
+   }
+}
