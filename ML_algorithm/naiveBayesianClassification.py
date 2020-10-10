@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+# @Author : Harry
 import numpy as np
 def Bayes(newdata,data,label,bayes):#data每行是一个数据，每列是一个维度；newdata是个向量
     result = {}#字典。键是结果，值是对应的可能性
