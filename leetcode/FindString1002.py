@@ -7,5 +7,10 @@
 """
 class Solution:
     def commonChars(self, A: List[str]) -> List[str]:
-        for char in set(A[0])
-            for i in range( min(s.count(char) for s in A ))
+        return [ char for char in set(A[0]) for i in range( min(s.count(char) for s in A )) ]
+            
+"""
+1. 巧妙应用min的方法，用循环生成数据量
+2. 通过s.count获取字符串个数
+3. set转换成集合
+"""
